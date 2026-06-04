@@ -1,6 +1,9 @@
 <article class="post">
     <header>
-        <h2 class="post__title:">{{post.title}}</h2>
+        <h2 class="post__title:">
+            <a href="{% url 'Blog:post' post.id %}">
+            {{post.title}}</h2>
+            </a>
     </header>
     <div class="posts__body:">{{post.body}}</div>
 </article>
