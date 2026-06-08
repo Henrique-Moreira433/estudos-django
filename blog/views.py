@@ -28,11 +28,17 @@ def exemplo(request):
     
 
 
-def post(request, id):
-    print('blog')
+def post(request, _id):
+    found_post = None
+
+    for post in posts:
+        if post ['id'] == _id:
+            found_post = post
+            break
+
     context ={ 
     'text': 'ESTAMOS NO POST ',
-    'posts': posts
+    'posts': [found_post]
     }
     return render(
         request,
